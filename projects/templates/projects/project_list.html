@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="project-section">
+    <div class="container">
+        <h1 class="page-title">Dự án của tôi</h1>
+        <div class="project-grid">
+            {% for project in page_obj %}
+            <div class="project-card">
+                <img src="{{ project.image.url }}" alt="{{ project.title }}">
+                <div class="project-content">
+                    <h3>{{ project.title }}</h3>
+                    <p>{{ project.short_description }}</p>
+                    <div class="project-buttons">
+                        <a href="{% url 'project_detail' project.id %}" class="project-btn">Chi tiết</a>
+                        <a href="{{ project.github_link }}" target="_blank" class="project-btn github-btn">Github Link</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="pagination">
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}">‹ Trước</a>
+        {% endif %}
+        <span>Trang {{ page_obj.number }} / {{ page_obj.paginator.num_pages }}</span>
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}"> Sau ›</a>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

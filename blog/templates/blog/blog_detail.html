@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <h1>{{ blog.title }}</h1>
+    <p class="text-muted">{{ blog.created_at|date:"d/m/Y H:i" }}</p>
+    <img src="{{ blog.image.url }}" class="detail-image">
+    <p>{{ blog.content }}</p>
+    <hr>
+    <h3>Bình luận</h3>
+    {% for comment in blog.comments.all %}
+    <div class="card mb-3">
+        <div class="card-body">
+            <h6>{{ comment.name }}</h6>
+            <small class="text-muted">{{ comment.created_at|date:"d/m/Y H:i" }}</small>
+            <p class="mt-2">{{ comment.content }}</p>
+        </div>
+    </div>
+    {% empty %}
+    <p>Chưa có bình luận nào.</p>
+    {% endfor %}
+    <hr>
+    <h3>Viết bình luận</h3>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <input
+                type="text"
+                name="name"
+                class="form-control"
+                placeholder="Tên của bạn"
+                required>
+        </div>
+        <div class="mb-3">
+            <textarea
+                name="content"
+                class="form-control"
+                rows="4"
+                placeholder="Viết bình luận..."
+                required></textarea>
+        </div>
+        <button type="submit" class="btn btn-dark">Gửi bình luận</button>
+    </form>
+</div>
+{% endblock %}

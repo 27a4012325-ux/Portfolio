@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="contact-section">
+    <div class="contact-container">
+        <h1>Liên hệ</h1>
+        <p class="contact-subtitle">
+            Hãy gửi cho tôi một tin nhắn nếu bạn muốn trao đổi
+            về học tập, dự án hoặc cơ hội hợp tác.
+        </p>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label>Họ và tên</label>{{ form.name }}</div>
+            <div class="form-group">
+                <label>Email</label>{{ form.email }}</div>
+            <div class="form-group"><label>Tiêu đề</label>{{ form.subject }}</div>
+            <div class="form-group"><label>Nội dung</label>{{ form.message }}</div>
+            <button type="submit" class="submit-btn">Gửi tin nhắn</button>
+        </form>
+    </div>
+</section>
+{% endblock %}

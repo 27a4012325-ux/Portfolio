@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="project-section">
+    <div class="container">
+        <h1 class="page-title">Blog của tôi</h1>
+        <div class="project-grid">
+            {% for post in page_obj %}
+            <div class="project-card">
+                <img src="{{ post.image.url }}" alt="{{ post.title }}">
+                <div class="project-content">
+                    <small>{{ post.created_at|date:"d/m/Y" }}</small>
+                    <h3>{{ post.title }}</h3>
+                    <p>{{ post.content|truncatewords:20 }}</p>
+                    <a href="{% url 'blog_detail' post.id %}" class="project-btn">Đọc thêm</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="pagination">
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}">‹ Trước</a>
+        {% endif %}
+        <span>Trang {{ page_obj.number }} / {{ page_obj.paginator.num_pages }}</span>
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}"> Sau ›</a>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

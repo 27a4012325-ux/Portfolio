@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="page-section">
+    <div class="container">
+        <div class="profile-card">
+            <div class="profile-image">
+                <img src="{{ profile.image.url }}" alt="{{ profile.full_name }}">
+            </div>
+            <div class="profile-info">
+                <h1>{{ profile.full_name }}</h1>
+                <p>{{ profile.bio }}</p>
+            </div>
+        </div>
+        <div class="info-grid">
+            <div class="info-box">
+                <h2>Thông tin cá nhân</h2>
+                <p><strong>Trường:  </strong>{{ profile.university }}</p>
+                <p><strong>Chuyên ngành:  </strong>{{ profile.major }}</p>
+                <p><strong>Email:  </strong>{{ profile.email }}</p>
+                <p><strong>SĐT:  </strong>{{ profile.phone }}</p>
+                <p><strong>Địa chỉ:  </strong>{{ profile.location }}</p>
+                <p><strong>Chứng chỉ:  </strong>{{ profile.certificate }}</p>
+            </div>
+            <div class="info-box">
+                <h2>Mục tiêu nghề nghiệp</h2>
+                <p>{{ profile.career_goal }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

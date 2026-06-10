@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="project-detail-section">
+    <div class="container">
+        <div class="project-detail">
+            <img src="{{ project.image.url }}" class="detail-image">
+            <h1>{{ project.title }}</h1>
+            <p class="project-date">{{ project.created_at }}</p>
+            <div class="project-description">{{ project.description|linebreaks }}</div>
+            <a href="{{ project.github_link }}" target="_blank" class="project-btn">Xem chi tiết trên GitHub</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
