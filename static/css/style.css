@@ -2,7 +2,7 @@
    NAVBAR
 ==================================================================================================== */
 body{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     background:#071122;
     color:white;
 }
@@ -225,12 +225,11 @@ body{
     gap:30px;
 }
 .info-box{
-    background:
-    rgba(255,255,255,.05);
-    border:
-    1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
     padding:30px;
     border-radius:20px;
+    line-height:1.8;
 }
 .info-box h2{
     margin-bottom:20px;
