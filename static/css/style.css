@@ -124,7 +124,6 @@ body{
    HOME
 ==================================================================================================== */
 .hero-section{
-    position: relative;
     min-height:60vh;
     display:flex;
     align-items:center;
@@ -144,8 +143,6 @@ body{
 }
 .hero-content{
     max-width:700px;
-    position:relative;
-    z-index:2;
 }
 .hero-tag{
     color: #CBD5E1;
@@ -162,40 +159,6 @@ body{
     font-size:1.1rem;
     line-height:1.8;
     margin-bottom:0px;
-}
-/* Hiệu ứng động */
-.hero-background{
-    position:absolute;
-    inset:0;
-    z-index:0;
-    overflow:hidden;
-}
-.blob{
-    position:absolute;
-    border-radius:50%;
-    filter: blur(90px);
-    opacity:0.25;
-    animation: float 10s ease-in-out infinite;
-}
-.blob1{
-    width:350px;
-    height:350px;
-    background:#A855F7;
-    top:10%;
-    right:5%;
-}
-.blob2{
-    width:250px;
-    height:250px;
-    background:#7C83FF;
-    bottom:10%;
-    right:20%;
-    animation-delay:2s;
-}
-@keyframes float{
-    0%{transform:translateY(0px);}
-    50%{transform:translateY(-30px);}
-    100%{transform:translateY(0px);}
 }
 /* Thanh thống kê */
 .stats-section{
@@ -235,8 +198,8 @@ body{
     margin-bottom:60px;
 }
 .profile-image img{
-    width:90%;
-    height:420px;
+    width:80%;
+    height:400px;
     object-fit:cover;
     border-radius:24px;
     display:block;
@@ -510,14 +473,12 @@ body{
 }
 
 /* ====================================================================================================
-   Responsive
+   Responsive điện thoại
 ==================================================================================================== */
 @media(max-width:768px){
     .skill-grid{grid-template-columns:1fr;}
     .blog-grid{grid-template-columns:1fr;}
     .profile-card{grid-template-columns:1fr; text-align:center;}
-    .info-grid{grid-template-columns:1fr;}
-    .blob1{width:220px; height:220px;}
-    .blob2{width:160px; height:160px;}}
+    .info-grid{grid-template-columns:1fr;}}
 @media (max-width:992px){
     .project-grid{grid-template-columns: repeat(2,1fr);}}
