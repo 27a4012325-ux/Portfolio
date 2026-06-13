@@ -7,6 +7,19 @@
             Hãy gửi cho tôi một tin nhắn nếu bạn muốn trao đổi
             về học tập, dự án hoặc cơ hội hợp tác.
         </p>
+        {% block scripts %}
+        {% if success %}
+        <script>
+        window.addEventListener('load', function () {
+            Swal.fire({
+                icon: 'success',
+                title: 'Cảm ơn bạn đã liên hệ!',
+                text: 'Tôi sẽ phản hồi sớm nhất có thể.',
+                confirmButtonText: 'Đóng'});
+        });
+        </script>
+        {% endif %}
+        {% endblock %}
         <form method="POST">
             {% csrf_token %}
             <div class="form-group">
