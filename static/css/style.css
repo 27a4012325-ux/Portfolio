@@ -32,14 +32,14 @@ body{
 .nav-link:hover{
      color:#7C83FF !important;
 }
-.nav-link::after{
+.nav-link::after{     /*Thêm dấu gạch dưới từ trái qua phải*/
     content:"";
     position:absolute;
-    width:0;
+    width:0;          /*chiều rộng=0 -> ko nhìn thấy ban đầu*/
     height:2px;
     background:#A855F7;
-    left:0;
-    bottom:-5px;
+    left:0;           /*gạch từ mép trái*/
+    bottom:-5px;      /*gạch dưới chữ 5px*/
     transition:0.3s;
 }
 .nav-link:hover::after{
@@ -75,8 +75,8 @@ body{
     color:#A855F7;
 }
 .social-links{
-    display:flex;
-    gap:15px;
+    display:flex;     /*Đặt hàng ngang*/
+    gap:15px;         /*Khoảng cách giữa các link*/
     margin-top:20px;
 }
 .social-links a{
@@ -85,14 +85,14 @@ body{
     display:flex;
     align-items:center;
     justify-content:center;
-    border-radius:50%;
+    border-radius:50%;     /*Biến hình vuông thành hình tròn*/
     background:rgba(255,255,255,.08);
     color:white;
     text-decoration:none;
     transition:.3s;
 }
 .social-links a:hover{
-    transform:translateY(-5px);
+    transform:translateY(-5px);     /*Khi hover thì di chuyển lên trên 5px*/
     background:#A855F7;
 }
 /* ====================
@@ -105,19 +105,18 @@ body{
     width:50px;
     height:50px;
     border:none;
-    border-radius:50%;
+    border-radius:50%;   /*Biến hình vuông thành hình tròn*/
     background:#A855F7;
     color:white;
     font-size:24px;
-    cursor:pointer;
-    display:none;
-    z-index:999;
+    cursor:pointer;     /*Khi rê chuột vào thì đổi thành hình bàn tay*/
+    display:none;       /*Ẩn mặc định, khi JS xảy ra mới hiện*/
+    z-index:999;        /*Ưu tiên hiện thị*/
     transition:.3s;
 }
 #backToTop:hover{
-    transform:translateY(-5px);
-    box-shadow:
-    0 0 20px rgba(168,85,247,.5);
+    transform:translateY(-5px);     /*Di chuyển lên trên 5px khi rê chuột vào*/
+    box-shadow: 0 0 20px rgba(168,85,247,.5);
 }
 
 /* ====================================================================================================
